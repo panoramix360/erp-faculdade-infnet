@@ -9,5 +9,9 @@ public class Funcionario extends Usuario{
 		
 		super.setTipo("funcionario");
 	}
-
+	
+	public Funcionario(String nome, String nomeDeUsuario, String senha,
+			String tipo) {
+		super(nome, nomeDeUsuario, senha, tipo);
+	}
 }

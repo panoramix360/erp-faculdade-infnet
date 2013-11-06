@@ -1,3 +1,12 @@
 eclipse.preferences.version=1
 encoding//src/erp/controller/Main.java=UTF-8
+encoding//src/erp/controller/command/cadastrar/CadastrarClienteCommand.java=UTF-8
+encoding//src/erp/controller/command/cadastrar/CadastrarFabricanteCommand.java=UTF-8
+encoding//src/erp/controller/command/cadastrar/CadastrarPedidoDeCompraCommand.java=UTF-8
+encoding//src/erp/controller/command/cadastrar/CadastrarPedidoDeVendaCommand.java=UTF-8
+encoding//src/erp/controller/command/cadastrar/CadastrarProdutoCommand.java=UTF-8
 encoding//src/erp/controller/command/cadastrar/CadastrarUsuarioCommand.java=UTF-8
+encoding//src/erp/controller/command/notafiscal/EntradaCommand.java=UTF-8
+encoding//src/erp/modelo/Produto.java=UTF-8
+encoding//src/erp/modelo/Usuario.java=UTF-8
+encoding//src/erp/modelo/gerenciador/GerenciadorEstoque.java=UTF-8

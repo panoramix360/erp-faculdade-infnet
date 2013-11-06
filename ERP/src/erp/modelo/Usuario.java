@@ -1,6 +1,6 @@
 package erp.modelo;
 
-public class Usuario {
+public abstract class Usuario {
 	private String nome;
 	private String nomeDeUsuario;
 	private String senha;
@@ -69,11 +69,26 @@ public class Usuario {
 		this.situacao = situacao;
 	}
 	
+	public Usuario(String nome, String nomeDeUsuario, String senha,
+			String tipo) {
+		this.nome = nome;
+		this.nomeDeUsuario = nomeDeUsuario;
+		this.senha = senha;
+		this.tipo = tipo;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if( this.nomeDeUsuario.equals( ((Usuario)obj).getNomeDeUsuario()) ) {
 			return true;
 		}
 		return false;
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome...........: " + this.nome + "\n" +
+			   "Nome de Usuário: " + this.nomeDeUsuario + "\n" +
+			   "Tipo...........: " + this.tipo + "\n";
 	}
 }

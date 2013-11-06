@@ -1,40 +1,59 @@
 package erp.modelo;
 
+import java.text.DecimalFormat;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Pedido {
+public abstract class Pedido {
 	
-	private ArrayList<ItemDoPedido> itens;
-	private float valorTotal;
+	private int id;
+	private ArrayList<Produto> produtos;
+	private double valorTotal;
 	private Date dataDoPedido;
 	private String status;
-	private Date emissao;
 	private Date recebimento;
 	private long notaFiscal;
 	
-	public Pedido() {
+	public Pedido(ArrayList<Produto> produtos, int id) {
+		this.id = id;
+		this.produtos = produtos;
+		this.calcularTotal();
+		this.dataDoPedido = new Date();
+		this.status = "Pendente";
+	}
+	
+	private void calcularTotal() {
+		double total = 0;
 		
+		for( Produto produto : produtos ) {
+			total += produto.getPreco();
+		}
+		
+		this.valorTotal = total;
 	}
 
-	public ArrayList<ItemDoPedido> getItens() {
-		return itens;
+	public ArrayList<Produto> getProdutos() {
+		return produtos;
 	}
 
-	public void setItens(ArrayList<ItemDoPedido> itens) {
-		this.itens = itens;
+	public void setProdutos(ArrayList<Produto> produtos) {
+		this.produtos = produtos;
 	}
 
-	public float getValorTotal() {
+	public double getValorTotal() {
 		return valorTotal;
 	}
 
-	public void setValorTotal(float valorTotal) {
+	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
 
-	public Date getDataDoPedido() {
-		return dataDoPedido;
+	private String getDataDoPedido() {
+		Format formatter = new SimpleDateFormat("dd/MM/yyyy");
+		
+		return formatter.format(this.dataDoPedido);
 	}
 
 	public void setDataDoPedido(Date dataDoPedido) {
@@ -47,14 +66,6 @@ public class Pedido {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	public Date getEmissao() {
-		return emissao;
-	}
-
-	public void setEmissao(Date emissao) {
-		this.emissao = emissao;
 	}
 
 	public Date getRecebimento() {
@@ -71,5 +82,23 @@ public class Pedido {
 
 	public void setNotaFiscal(long notaFiscal) {
 		this.notaFiscal = notaFiscal;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		DecimalFormat formatador = new DecimalFormat("R$0.00");
+		return "ID..................: " + this.id + "\n" +
+			   "Total de Produtos...: " + this.produtos.size() + "\n" +
+			   "Valor Total.........: " + formatador.format(this.valorTotal) + "\n" +
+			   "Data do Pedido......: " + this.getDataDoPedido() + "\n" +
+			   "Status..............: " + this.status + "\n";
 	}
 }

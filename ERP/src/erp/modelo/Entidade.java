@@ -10,8 +10,9 @@ public class Entidade {
 	private String email;
 	private boolean situacao;
 	
-	public Entidade() {
-		
+	public Entidade(String cnpj, String nomeFantasia) {
+		this.cnpj = cnpj;
+		this.nomeFantasia = nomeFantasia;
 	}
 
 	public String getCnpj() {
@@ -68,5 +69,11 @@ public class Entidade {
 
 	public void setSituacao(boolean situacao) {
 		this.situacao = situacao;
+	}
+	
+	@Override
+	public String toString() {
+		return "CNPJ: " + this.cnpj + "\n" +
+				"Nome Fantasia: " + this.nomeFantasia + "\n";
 	}
 }

@@ -7,5 +7,9 @@ public class Administrador extends Usuario{
 		
 		super.setTipo("admin");
 	}
-
+	
+	public Administrador(String nome, String nomeDeUsuario, String senha,
+			String tipo) {
+		super(nome, nomeDeUsuario, senha, tipo);
+	}
 }

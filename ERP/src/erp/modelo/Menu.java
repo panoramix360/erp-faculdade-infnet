@@ -23,7 +23,8 @@ public class Menu {
 	}
 	
 	public void exibirMenu() {
-		System.out.println("========="+ this.titulo +"=========");
+		System.out.println("\n\n\n\n\n\n\n\n========="+ this.titulo +"=========");
+		System.out.println("0- Voltar");
 		for( int i = 1; i <= this.index - 1; i++ ) {
 			System.out.println(i + "- " + comandos.get(i).getNomeMenu());
 		}
