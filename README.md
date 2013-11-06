@@ -1,12 +1,12 @@
-Infnet College Assignment
-Requirements Analysis
+Infnet College Assignment Requirements Analysis
 ====================
 
 Objective
 ---------
-We need to make a program that emulates a ERP(Enterprise Resource Planning), with various modules and implement some Design Patterns that are necessary.
+We need to make an application that emulates an ERP (Enterprise Resource Planning), with various modules and implement some Design Patterns of our choose.
 
-Structure:
+Structure
+---------
 The project is structure in 3 Design Patterns:
 - Command Pattern
 - AbstractFactory Pattern
